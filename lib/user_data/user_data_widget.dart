@@ -1,8 +1,10 @@
+import '../auth/auth_util.dart';
+import '../create_account/create_account_widget.dart';
+import '../create_expense/create_expense_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../login_home/login_home_widget.dart';
-import '../validate_transaction/validate_transaction_widget.dart';
+import '../overallview/overallview_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -158,7 +160,7 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                               type: PageTransitionType.leftToRight,
                               duration: Duration(milliseconds: 300),
                               reverseDuration: Duration(milliseconds: 300),
-                              child: ValidateTransactionWidget(),
+                              child: CreateExpenseWidget(),
                             ),
                             (r) => false,
                           );
@@ -188,7 +190,7 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            ValidateTransactionWidget(),
+                                            CreateExpenseWidget(),
                                       ),
                                       (r) => false,
                                     );
@@ -263,33 +265,47 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                           color: Colors.white,
                           shape: BoxShape.rectangle,
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
-                              child: Text(
-                                'View Transaction Report',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF090F13),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
+                        child: InkWell(
+                          onTap: () async {
+                            await Navigator.pushAndRemoveUntil(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.rightToLeft,
+                                duration: Duration(milliseconds: 300),
+                                reverseDuration: Duration(milliseconds: 300),
+                                child: OverallviewWidget(),
+                              ),
+                              (r) => false,
+                            );
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
+                                child: Text(
+                                  'View Transaction Report',
+                                  style: FlutterFlowTheme.bodyText1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF090F13),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Expanded(
-                              child: Align(
-                                alignment: AlignmentDirectional(0.9, 0),
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Color(0xFF95A1AC),
-                                  size: 18,
+                              Expanded(
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.9, 0),
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Color(0xFF95A1AC),
+                                    size: 18,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -347,13 +363,11 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
+                          await signOut();
                           await Navigator.pushAndRemoveUntil(
                             context,
-                            PageTransition(
-                              type: PageTransitionType.rightToLeft,
-                              duration: Duration(milliseconds: 300),
-                              reverseDuration: Duration(milliseconds: 300),
-                              child: LoginHomeWidget(),
+                            MaterialPageRoute(
+                              builder: (context) => CreateAccountWidget(),
                             ),
                             (r) => false,
                           );

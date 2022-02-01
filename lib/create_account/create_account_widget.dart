@@ -1,7 +1,10 @@
+import '../auth/auth_util.dart';
+import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../login_home/login_home_widget.dart';
+import '../user_data/user_data_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,10 +19,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
   TextEditingController emailAddressController1;
   TextEditingController textController1;
   TextEditingController emailAddressController2;
-  TextEditingController passwordController1;
-  bool passwordVisibility1;
-  TextEditingController passwordController2;
-  bool passwordVisibility2;
+  TextEditingController passwordController;
+  bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -28,10 +29,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
     emailAddressController1 = TextEditingController();
     textController1 = TextEditingController();
     emailAddressController2 = TextEditingController();
-    passwordController1 = TextEditingController();
-    passwordVisibility1 = false;
-    passwordController2 = TextEditingController();
-    passwordVisibility2 = false;
+    passwordController = TextEditingController();
+    passwordVisibility = false;
   }
 
   @override
@@ -229,8 +228,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                     children: [
                       Expanded(
                         child: TextFormField(
-                          controller: passwordController1,
-                          obscureText: !passwordVisibility1,
+                          controller: passwordController,
+                          obscureText: !passwordVisibility,
                           decoration: InputDecoration(
                             labelText: 'Password',
                             labelStyle: FlutterFlowTheme.bodyText1.override(
@@ -266,79 +265,10 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                 EdgeInsetsDirectional.fromSTEB(16, 24, 24, 24),
                             suffixIcon: InkWell(
                               onTap: () => setState(
-                                () =>
-                                    passwordVisibility1 = !passwordVisibility1,
+                                () => passwordVisibility = !passwordVisibility,
                               ),
                               child: Icon(
-                                passwordVisibility1
-                                    ? Icons.visibility_outlined
-                                    : Icons.visibility_off_outlined,
-                                color: Color(0xFF95A1AC),
-                                size: 22,
-                              ),
-                            ),
-                          ),
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF2B343A),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: TextFormField(
-                          controller: passwordController2,
-                          obscureText: !passwordVisibility2,
-                          decoration: InputDecoration(
-                            labelText: 'Confirm Password',
-                            labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
-                            hintText: 'Enter your email here...',
-                            hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0xFFDBE2E7),
-                                width: 2,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0xFFDBE2E7),
-                                width: 2,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            filled: true,
-                            fillColor: Colors.white,
-                            contentPadding:
-                                EdgeInsetsDirectional.fromSTEB(16, 24, 24, 24),
-                            suffixIcon: InkWell(
-                              onTap: () => setState(
-                                () =>
-                                    passwordVisibility2 = !passwordVisibility2,
-                              ),
-                              child: Icon(
-                                passwordVisibility2
+                                passwordVisibility
                                     ? Icons.visibility_outlined
                                     : Icons.visibility_off_outlined,
                                 color: Color(0xFF95A1AC),
@@ -365,14 +295,29 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          await Navigator.push(
+                          final user = await createAccountWithEmail(
                             context,
-                            PageTransition(
-                              type: PageTransitionType.leftToRight,
-                              duration: Duration(milliseconds: 300),
-                              reverseDuration: Duration(milliseconds: 300),
-                              child: LoginHomeWidget(),
+                            emailAddressController1.text,
+                            passwordController.text,
+                          );
+                          if (user == null) {
+                            return;
+                          }
+
+                          final usersCreateData = createUsersRecordData(
+                            displayName: emailAddressController2.text,
+                          );
+                          await UsersRecord.collection
+                              .doc(user.uid)
+                              .update(usersCreateData);
+
+                          await sendEmailVerification();
+                          await Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => UserDataWidget(),
                             ),
+                            (r) => false,
                           );
                         },
                         text: 'Create Account',

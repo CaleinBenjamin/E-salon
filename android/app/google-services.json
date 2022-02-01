@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "864413507319",
+    "firebase_url": "https://esalon-5f19a-default-rtdb.firebaseio.com",
     "project_id": "esalon-5f19a",
     "storage_bucket": "esalon-5f19a.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "864413507319-1k368t57g75sqjla97sq9utmnkn4rgij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterflow.esalon",
+            "certificate_hash": "c21f2c8ad0e17ddee4695707e8f08510046926df"
+          }
+        },
         {
           "client_id": "864413507319-v9217l49mv8pu45es1jpnrlm778vu2f4.apps.googleusercontent.com",
           "client_type": 1,

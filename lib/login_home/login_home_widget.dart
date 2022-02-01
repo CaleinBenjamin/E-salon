@@ -1,3 +1,4 @@
+import '../auth/auth_util.dart';
 import '../create_account/create_account_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -15,7 +16,7 @@ class LoginHomeWidget extends StatefulWidget {
 
 class _LoginHomeWidgetState extends State<LoginHomeWidget> {
   TextEditingController emailAddressController;
-  TextEditingController textController1;
+  TextEditingController textController;
   TextEditingController passwordController;
   bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -24,7 +25,7 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
   void initState() {
     super.initState();
     emailAddressController = TextEditingController();
-    textController1 = TextEditingController();
+    textController = TextEditingController();
     passwordController = TextEditingController();
     passwordVisibility = false;
   }
@@ -62,7 +63,7 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                     children: [
                       Expanded(
                         child: TextFormField(
-                          controller: textController1,
+                          controller: textController,
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'eSalon',
@@ -236,6 +237,15 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
+                          final user = await signInWithEmail(
+                            context,
+                            emailAddressController.text,
+                            passwordController.text,
+                          );
+                          if (user == null) {
+                            return;
+                          }
+
                           await Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(

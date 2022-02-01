@@ -6,7 +6,7 @@ import 'auth/firebase_user_provider.dart';
 import 'auth/auth_util.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
-import 'package:esalon/login_home/login_home_widget.dart';
+import 'package:esalon/create_account/create_account_widget.dart';
 import 'package:esalon/user_data/user_data_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 
@@ -72,7 +72,7 @@ class _MyAppState extends State<MyApp> {
             )
           : currentUser.loggedIn
               ? UserDataWidget()
-              : LoginHomeWidget(),
+              : CreateAccountWidget(),
     );
   }
 }

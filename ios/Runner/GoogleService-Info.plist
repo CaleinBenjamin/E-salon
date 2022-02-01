@@ -7,7 +7,7 @@
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.864413507319-ktrotm687c8hov5b948uiefidn2qv07c</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>864413507319-v9217l49mv8pu45es1jpnrlm778vu2f4.apps.googleusercontent.com</string>
+	<string>864413507319-1k368t57g75sqjla97sq9utmnkn4rgij.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyC-mnCNBHBQcFDGIkx2xbooXRiiO317V1E</string>
 	<key>GCM_SENDER_ID</key>
@@ -32,5 +32,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:864413507319:ios:abb54b953f11d566f97df2</string>
+	<key>DATABASE_URL</key>
+	<string>https://esalon-5f19a-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
