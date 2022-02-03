@@ -16,6 +16,7 @@
 	<string>Esalon</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+
 	<key>CFBundleShortVersionString</key>
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
@@ -27,7 +28,7 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>com.googleusercontent.apps.864413507319-ktrotm687c8hov5b948uiefidn2qv07c</string>
+                <string>com.googleusercontent.apps.110296077868-3kfej7637l4u0inbacdr45idl94e2vgf</string>
                 
             </array>
         </dict>

@@ -94,9 +94,7 @@ class _CreateExpenseWidgetState extends State<CreateExpenseWidget> {
                   obscureText: false,
                   decoration: InputDecoration(
                     labelText: 'Amount',
-                    labelStyle: FlutterFlowTheme.bodyText1,
                     hintText: 'Amount you have spent',
-                    hintStyle: FlutterFlowTheme.bodyText1,
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Color(0xFF5D3FD3),
@@ -190,9 +188,7 @@ class _CreateExpenseWidgetState extends State<CreateExpenseWidget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: 'When',
-                  labelStyle: FlutterFlowTheme.bodyText1,
                   hintText: 'Date Of Transaction Entry',
-                  hintStyle: FlutterFlowTheme.bodyText1,
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0xFF5D3FD3),
@@ -236,9 +232,7 @@ class _CreateExpenseWidgetState extends State<CreateExpenseWidget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: 'Note',
-                  labelStyle: FlutterFlowTheme.bodyText1,
                   hintText: 'Any Other Info',
-                  hintStyle: FlutterFlowTheme.bodyText1,
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0xFF5D3FD3),

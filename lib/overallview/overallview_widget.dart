@@ -124,12 +124,8 @@ class _OverallviewWidgetState extends State<OverallviewWidget> {
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'When',
-                                              labelStyle:
-                                                  FlutterFlowTheme.bodyText1,
                                               hintText:
                                                   'Date Of Transaction Entry',
-                                              hintStyle:
-                                                  FlutterFlowTheme.bodyText1,
                                               enabledBorder: InputBorder.none,
                                               focusedBorder: InputBorder.none,
                                               filled: true,

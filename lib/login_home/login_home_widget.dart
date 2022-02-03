@@ -67,19 +67,7 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'eSalon',
-                            labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.tertiaryColor,
-                              fontSize: 50,
-                              fontWeight: FontWeight.bold,
-                            ),
                             hintText: 'Our Project Name',
-                            hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.tertiaryColor,
-                              fontSize: 50,
-                              fontWeight: FontWeight.bold,
-                            ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),

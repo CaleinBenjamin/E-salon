@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>864413507319-ktrotm687c8hov5b948uiefidn2qv07c.apps.googleusercontent.com</string>
+	<string>110296077868-3kfej7637l4u0inbacdr45idl94e2vgf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.864413507319-ktrotm687c8hov5b948uiefidn2qv07c</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>864413507319-1k368t57g75sqjla97sq9utmnkn4rgij.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.110296077868-3kfej7637l4u0inbacdr45idl94e2vgf</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC-mnCNBHBQcFDGIkx2xbooXRiiO317V1E</string>
+	<string>AIzaSyDz9sPtSUl_N8zIFhwrPQBNLY3s39MfvCE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>864413507319</string>
+	<string>110296077868</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.flutterflow.esalon</string>
 	<key>PROJECT_ID</key>
-	<string>esalon-5f19a</string>
+	<string>esalonapp-59768</string>
 	<key>STORAGE_BUCKET</key>
-	<string>esalon-5f19a.appspot.com</string>
+	<string>esalonapp-59768.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:864413507319:ios:abb54b953f11d566f97df2</string>
-	<key>DATABASE_URL</key>
-	<string>https://esalon-5f19a-default-rtdb.firebaseio.com</string>
+	<string>1:110296077868:ios:fee74602a14d4bc2b1e389</string>
 </dict>
 </plist>
