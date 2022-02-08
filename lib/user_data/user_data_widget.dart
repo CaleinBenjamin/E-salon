@@ -1,9 +1,9 @@
 import '../auth/auth_util.dart';
-import '../create_account/create_account_widget.dart';
 import '../create_expense/create_expense_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../login_home/login_home_widget.dart';
 import '../overallview/overallview_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -80,13 +80,15 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                            child: Text(
-                              'Esalon Nateete',
-                              style: FlutterFlowTheme.title1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0xFF090F13),
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
+                            child: AuthUserStreamWidget(
+                              child: Text(
+                                currentUserDisplayName,
+                                style: FlutterFlowTheme.title1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: Color(0xFF090F13),
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
@@ -98,7 +100,7 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                             child: Text(
-                              'esalonNateete@gmail.com',
+                              currentUserEmail,
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Lexend Deca',
                                 color: Color(0xFFEE8B60),
@@ -367,7 +369,7 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                           await Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => CreateAccountWidget(),
+                              builder: (context) => LoginHomeWidget(),
                             ),
                             (r) => false,
                           );

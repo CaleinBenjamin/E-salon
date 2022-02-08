@@ -16,9 +16,9 @@ class CreateAccountWidget extends StatefulWidget {
 }
 
 class _CreateAccountWidgetState extends State<CreateAccountWidget> {
-  TextEditingController emailAddressController1;
-  TextEditingController textController1;
-  TextEditingController emailAddressController2;
+  TextEditingController emailAddressController;
+  TextEditingController fullnameController;
+  TextEditingController textController;
   TextEditingController passwordController;
   bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -26,9 +26,9 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
   @override
   void initState() {
     super.initState();
-    emailAddressController1 = TextEditingController();
-    textController1 = TextEditingController();
-    emailAddressController2 = TextEditingController();
+    emailAddressController = TextEditingController();
+    fullnameController = TextEditingController();
+    textController = TextEditingController();
     passwordController = TextEditingController();
     passwordVisibility = false;
   }
@@ -66,7 +66,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                     children: [
                       Expanded(
                         child: TextFormField(
-                          controller: textController1,
+                          controller: textController,
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'eSalon',
@@ -106,7 +106,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                     children: [
                       Expanded(
                         child: TextFormField(
-                          controller: emailAddressController1,
+                          controller: fullnameController,
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'Full Name',
@@ -161,7 +161,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                     children: [
                       Expanded(
                         child: TextFormField(
-                          controller: emailAddressController2,
+                          controller: emailAddressController,
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'Email Address',
@@ -285,7 +285,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                         onPressed: () async {
                           final user = await createAccountWithEmail(
                             context,
-                            emailAddressController1.text,
+                            emailAddressController.text,
                             passwordController.text,
                           );
                           if (user == null) {
@@ -293,7 +293,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                           }
 
                           final usersCreateData = createUsersRecordData(
-                            displayName: emailAddressController2.text,
+                            displayName: fullnameController.text,
                           );
                           await UsersRecord.collection
                               .doc(user.uid)

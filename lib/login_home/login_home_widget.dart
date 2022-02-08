@@ -262,8 +262,8 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                         ),
                       ),
                       FFButtonWidget(
-                        onPressed: () {
-                          print('Button-ForgotPassword pressed ...');
+                        onPressed: () async {
+                          await sendEmailVerification();
                         },
                         text: 'Forgot Password?',
                         options: FFButtonOptions(

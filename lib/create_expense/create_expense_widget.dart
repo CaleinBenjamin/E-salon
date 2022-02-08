@@ -139,6 +139,10 @@ class _CreateExpenseWidgetState extends State<CreateExpenseWidget> {
                   color: Color(0xFF303030),
                 ),
                 hintText: 'Transaction Type',
+                icon: Icon(
+                  Icons.arrow_drop_down_circle,
+                  size: 15,
+                ),
                 fillColor: Color(0xFFE6E6E6),
                 elevation: 2,
                 borderColor: Color(0xFF5D3FD3),
@@ -168,6 +172,10 @@ class _CreateExpenseWidgetState extends State<CreateExpenseWidget> {
                   color: Color(0xFF303030),
                 ),
                 hintText: 'Tag',
+                icon: Icon(
+                  Icons.arrow_drop_down_circle_rounded,
+                  size: 15,
+                ),
                 fillColor: Color(0xFFE6E6E6),
                 elevation: 2,
                 borderColor: Color(0xFF5D3FD3),
@@ -204,6 +212,9 @@ class _CreateExpenseWidgetState extends State<CreateExpenseWidget> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   filled: true,
+                  prefixIcon: Icon(
+                    Icons.access_time_outlined,
+                  ),
                   suffixIcon: textController2.text.isNotEmpty
                       ? InkWell(
                           onTap: () => setState(
@@ -277,6 +288,10 @@ class _CreateExpenseWidgetState extends State<CreateExpenseWidget> {
                   color: Color(0xFF303030),
                 ),
                 hintText: 'Location',
+                icon: Icon(
+                  Icons.add_location_alt,
+                  size: 15,
+                ),
                 fillColor: Color(0xFFE6E6E6),
                 elevation: 2,
                 borderColor: Color(0xFF5D3FD3),
