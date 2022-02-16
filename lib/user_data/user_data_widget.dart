@@ -1,10 +1,9 @@
 import '../auth/auth_util.dart';
-import '../create_expense/create_expense_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../login_home/login_home_widget.dart';
-import '../overallview/overallview_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -83,12 +82,14 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                             child: AuthUserStreamWidget(
                               child: Text(
                                 currentUserDisplayName,
-                                style: FlutterFlowTheme.title1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF090F13),
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .title1
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF090F13),
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                               ),
                             ),
                           ),
@@ -101,12 +102,14 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                             child: Text(
                               currentUserEmail,
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Color(0xFFEE8B60),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFFEE8B60),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                             ),
                           ),
                         ],
@@ -127,12 +130,12 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(24, 12, 0, 12),
                     child: Text(
                       'Account Settings',
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Color(0xFF090F13),
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Lexend Deca',
+                            color: Color(0xFF090F13),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ),
                 ],
@@ -144,117 +147,6 @@ class _UserDataWidgetState extends State<UserDataWidget> {
               padding: EdgeInsets.zero,
               scrollDirection: Axis.vertical,
               children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: InkWell(
-                        onTap: () async {
-                          await Navigator.pushAndRemoveUntil(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.leftToRight,
-                              duration: Duration(milliseconds: 300),
-                              reverseDuration: Duration(milliseconds: 300),
-                              child: CreateExpenseWidget(),
-                            ),
-                            (r) => false,
-                          );
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
-                              child: Text(
-                                'Create Transaction',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF090F13),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Align(
-                                alignment: AlignmentDirectional(0.9, 0),
-                                child: InkWell(
-                                  onTap: () async {
-                                    await Navigator.pushAndRemoveUntil(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            CreateExpenseWidget(),
-                                      ),
-                                      (r) => false,
-                                    );
-                                  },
-                                  child: Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Color(0xFF95A1AC),
-                                    size: 18,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.rectangle,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
-                              child: Text(
-                                'Transaction Details',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF090F13),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Align(
-                                alignment: AlignmentDirectional(0.9, 0),
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Color(0xFF95A1AC),
-                                  size: 18,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                   child: Row(
@@ -269,15 +161,12 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                         ),
                         child: InkWell(
                           onTap: () async {
-                            await Navigator.pushAndRemoveUntil(
+                            await Navigator.push(
                               context,
-                              PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                duration: Duration(milliseconds: 300),
-                                reverseDuration: Duration(milliseconds: 300),
-                                child: OverallviewWidget(),
+                              MaterialPageRoute(
+                                builder: (context) => NavBarPage(
+                                    initialPage: 'Create_transaction'),
                               ),
-                              (r) => false,
                             );
                           },
                           child: Row(
@@ -287,13 +176,15 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
                                 child: Text(
-                                  'View Transaction Report',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF090F13),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                                  'View & Create Transaction Report',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Color(0xFF090F13),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.normal,
+                                      ),
                                 ),
                               ),
                               Expanded(
@@ -325,33 +216,40 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                           color: Colors.white,
                           shape: BoxShape.rectangle,
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
-                              child: Text(
-                                'Change Password',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF090F13),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
+                        child: InkWell(
+                          onTap: () async {
+                            await sendEmailVerification();
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
+                                child: Text(
+                                  'Change Password',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Color(0xFF090F13),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.normal,
+                                      ),
                                 ),
                               ),
-                            ),
-                            Expanded(
-                              child: Align(
-                                alignment: AlignmentDirectional(0.9, 0),
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Color(0xFF95A1AC),
-                                  size: 18,
+                              Expanded(
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.9, 0),
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Color(0xFF95A1AC),
+                                    size: 18,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -363,34 +261,38 @@ class _UserDataWidgetState extends State<UserDataWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      FFButtonWidget(
-                        onPressed: () async {
-                          await signOut();
-                          await Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => LoginHomeWidget(),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            await signOut();
+                            await Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginHomeWidget(),
+                              ),
+                              (r) => false,
+                            );
+                          },
+                          text: 'Log Out',
+                          options: FFButtonOptions(
+                            width: 90,
+                            height: 40,
+                            color: Colors.white,
+                            textStyle:
+                                FlutterFlowTheme.of(context).bodyText2.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF4B39EF),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                            elevation: 1,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1,
                             ),
-                            (r) => false,
-                          );
-                        },
-                        text: 'Log Out',
-                        options: FFButtonOptions(
-                          width: 90,
-                          height: 40,
-                          color: Colors.white,
-                          textStyle: FlutterFlowTheme.bodyText2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF4B39EF),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
+                            borderRadius: 8,
                           ),
-                          elevation: 1,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1,
-                          ),
-                          borderRadius: 8,
                         ),
                       ),
                     ],

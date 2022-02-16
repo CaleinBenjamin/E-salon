@@ -21,19 +21,20 @@ abstract class TransactionDetailsRecord
   DateTime get when;
 
   @nullable
-  @BuiltValueField(wireName: 'Note')
-  String get note;
+  @BuiltValueField(wireName: 'Branch')
+  String get branch;
 
   @nullable
-  @BuiltValueField(wireName: 'trans_type')
-  BuiltList<String> get transType;
+  @BuiltValueField(wireName: 'NatureofTransaction')
+  String get natureofTransaction;
 
   @nullable
-  @BuiltValueField(wireName: 'Tag')
-  BuiltList<String> get tag;
+  @BuiltValueField(wireName: 'categoryOf_transaction')
+  String get categoryOfTransaction;
 
   @nullable
-  BuiltList<String> get location;
+  @BuiltValueField(wireName: 'TransactionState')
+  bool get transactionState;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
@@ -42,10 +43,10 @@ abstract class TransactionDetailsRecord
   static void _initializeBuilder(TransactionDetailsRecordBuilder builder) =>
       builder
         ..amount = 0.0
-        ..note = ''
-        ..transType = ListBuilder()
-        ..tag = ListBuilder()
-        ..location = ListBuilder();
+        ..branch = ''
+        ..natureofTransaction = ''
+        ..categoryOfTransaction = ''
+        ..transactionState = false;
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('transaction_details');
@@ -73,14 +74,17 @@ abstract class TransactionDetailsRecord
 Map<String, dynamic> createTransactionDetailsRecordData({
   double amount,
   DateTime when,
-  String note,
+  String branch,
+  String natureofTransaction,
+  String categoryOfTransaction,
+  bool transactionState,
 }) =>
     serializers.toFirestore(
         TransactionDetailsRecord.serializer,
         TransactionDetailsRecord((t) => t
           ..amount = amount
           ..when = when
-          ..note = note
-          ..transType = null
-          ..tag = null
-          ..location = null));
+          ..branch = branch
+          ..natureofTransaction = natureofTransaction
+          ..categoryOfTransaction = categoryOfTransaction
+          ..transactionState = transactionState));

@@ -4,7 +4,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../login_home/login_home_widget.dart';
-import '../user_data/user_data_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -86,12 +86,15 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            color: FlutterFlowTheme.tertiaryColor,
-                            fontSize: 50,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                                fontFamily: 'Poppins',
+                                color:
+                                    FlutterFlowTheme.of(context).tertiaryColor,
+                                fontSize: 50,
+                                fontWeight: FontWeight.bold,
+                              ),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -110,19 +113,21 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'Full Name',
-                            labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            labelStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             hintText: 'Enter your name here...',
-                            hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            hintStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0xFFDBE2E7),
@@ -142,12 +147,13 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                             contentPadding:
                                 EdgeInsetsDirectional.fromSTEB(16, 24, 0, 24),
                           ),
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF2B343A),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF2B343A),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ),
                       ),
                     ],
@@ -165,19 +171,21 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'Email Address',
-                            labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            labelStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             hintText: 'Enter your email here...',
-                            hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            hintStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0xFFDBE2E7),
@@ -197,12 +205,13 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                             contentPadding:
                                 EdgeInsetsDirectional.fromSTEB(16, 24, 0, 24),
                           ),
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF2B343A),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF2B343A),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ),
                       ),
                     ],
@@ -220,19 +229,21 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                           obscureText: !passwordVisibility,
                           decoration: InputDecoration(
                             labelText: 'Password',
-                            labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            labelStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             hintText: 'Enter your email here...',
-                            hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            hintStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0xFFDBE2E7),
@@ -264,12 +275,13 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                               ),
                             ),
                           ),
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF2B343A),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF2B343A),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ),
                       ),
                     ],
@@ -303,7 +315,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                           await Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => UserDataWidget(),
+                              builder: (context) =>
+                                  NavBarPage(initialPage: 'UserData'),
                             ),
                             (r) => false,
                           );
@@ -313,12 +326,13 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                           width: 210,
                           height: 60,
                           color: Color(0xFF090F13),
-                          textStyle: FlutterFlowTheme.subtitle1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                           elevation: 3,
                           borderSide: BorderSide(
                             color: Colors.transparent,
@@ -338,12 +352,12 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                     children: [
                       Text(
                         'Already have an account?',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Lexend Deca',
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
                       ),
                       FFButtonWidget(
                         onPressed: () async {
@@ -363,12 +377,13 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                           width: 70,
                           height: 30,
                           color: Color(0x00FFFFFF),
-                          textStyle: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF39D2C0),
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF39D2C0),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                           elevation: 0,
                           borderSide: BorderSide(
                             color: Colors.transparent,

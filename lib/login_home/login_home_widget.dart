@@ -3,7 +3,7 @@ import '../create_account/create_account_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../user_data/user_data_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -83,12 +83,15 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            color: FlutterFlowTheme.tertiaryColor,
-                            fontSize: 50,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                                fontFamily: 'Poppins',
+                                color:
+                                    FlutterFlowTheme.of(context).tertiaryColor,
+                                fontSize: 50,
+                                fontWeight: FontWeight.bold,
+                              ),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -107,19 +110,21 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'Email Address',
-                            labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            labelStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             hintText: 'Enter your email here...',
-                            hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            hintStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0xFFDBE2E7),
@@ -139,12 +144,13 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                             contentPadding:
                                 EdgeInsetsDirectional.fromSTEB(16, 24, 0, 24),
                           ),
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF2B343A),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF2B343A),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ),
                       ),
                     ],
@@ -162,19 +168,21 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                           obscureText: !passwordVisibility,
                           decoration: InputDecoration(
                             labelText: 'Password',
-                            labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            labelStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             hintText: 'Enter your email here...',
-                            hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            hintStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0xFFDBE2E7),
@@ -206,12 +214,13 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                               ),
                             ),
                           ),
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF2B343A),
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF2B343A),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ),
                       ),
                     ],
@@ -237,7 +246,8 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                           await Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => UserDataWidget(),
+                              builder: (context) =>
+                                  NavBarPage(initialPage: 'UserData'),
                             ),
                             (r) => false,
                           );
@@ -247,12 +257,13 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                           width: 130,
                           height: 60,
                           color: Color(0xFF090F13),
-                          textStyle: FlutterFlowTheme.subtitle1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                           elevation: 3,
                           borderSide: BorderSide(
                             color: Colors.transparent,
@@ -270,12 +281,13 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                           width: 170,
                           height: 30,
                           color: Color(0x00FFFFFF),
-                          textStyle: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                           elevation: 0,
                           borderSide: BorderSide(
                             color: Colors.transparent,
@@ -295,12 +307,12 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                     children: [
                       Text(
                         'Don\'t have an account?',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Lexend Deca',
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
                       ),
                       FFButtonWidget(
                         onPressed: () async {
@@ -320,12 +332,13 @@ class _LoginHomeWidgetState extends State<LoginHomeWidget> {
                           width: 90,
                           height: 30,
                           color: Color(0x00FFFFFF),
-                          textStyle: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF39D2C0),
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Color(0xFF39D2C0),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                           elevation: 0,
                           borderSide: BorderSide(
                             color: Colors.transparent,
